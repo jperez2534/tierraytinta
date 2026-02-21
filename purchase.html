@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase — Tierra y Tinta</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrapper">
+      <a href="index.html" class="logo">Tierra y Tinta</a>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="purchase.html">Necklaces</a></li>
+          <li><a href="purchase.html">Earrings</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="purchase.html">Shop</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="section section--narrow">
+      <h1>Purchase</h1>
+
+      <div class="gallery-grid gallery-grid--compact">
+        <figure class="gallery-item">
+          <img src="assets/orchid-pendant.png" alt="Orchid pendant detail">
+          <figcaption>Pendant</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/orchid-necklace-worn.png" alt="Orchid necklace worn">
+          <figcaption>Necklace</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="assets/orchid-lariat.png" alt="Orchid lariat">
+          <figcaption>Lariat</figcaption>
+        </figure>
+      </div>
+
+      <p class="card-accent">
+        Sorry we ran out of inventory. Please leave your name and email and we will contact you when we have more inventory.
+      </p>
+
+      <form class="notify-form" id="notify-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+        <button type="submit" class="btn">Notify me when in stock</button>
+      </form>
+
+      <p class="thank-you-message" id="thank-you" aria-live="polite">
+        Thank you! We’ll contact you when we have more inventory.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrapper">
+      <p class="tagline">Slow crafted in Miami, Florida</p>
+      <p>
+        <a href="https://instagram.com/tierraytinta.mia" class="instagram-link" target="_blank" rel="noopener">@tierraytinta.mia</a>
+      </p>
+      <p class="copyright">Tierra y Tinta — Custom art jewelry from real orchids.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var form = document.getElementById('notify-form');
+      var thankYou = document.getElementById('thank-you');
+      if (form && thankYou) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          form.style.display = 'none';
+          thankYou.classList.add('visible');
+          // TODO: send name/email to your backend or form service (e.g. Formspree, Netlify Forms)
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
